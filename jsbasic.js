@@ -249,6 +249,30 @@
 // console.log("האובייקט המקורי:", originalObj);
 // console.log("האובייקט החדש (מפתחות גדולים וממוינים):", transformedObj);
 
+
+// let  obj={
+//    moshe: 6,
+//    talya: 7,
+//    ruth: 4,
+// }
+
+// let keysArr = Object.keys(obj);
+
+// keysArr.sort();
+
+// obj2={};
+
+// for(let i=0; i<keysArr.length; i++)
+// {
+//     let x= keysArr[i];
+//     let y= x.toUpperCase();
+
+//     obj2[y]=obj[x];
+
+// }
+
+// console.log(obj,obj2);
+
 //12
 // let size = 4;        
 // let symbol = "*";    
@@ -262,6 +286,20 @@
 
   
 //     console.log(currentRow);
+// }
+
+// let size=4;
+// let symbol="*";
+
+// for(let i=1; i<=size; i++)
+// {
+//     let row="";
+
+//     for( let j=1; j<=i ; j++)
+//     {
+//         row+=symbol+" ";
+//     }
+//     console.log(row);
 // }
 
 //13
@@ -284,39 +322,66 @@
 
 //     if (presentInA[currentItem] === true && alreadyMatched[currentItem] === undefined) {
 //         matchCount++;
-//         alreadyMatched[currentItem] = true; // מסמנים שספרנו את הערך הזה
+//         alreadyMatched[currentItem] = true; 
 //     }
 // }
 
-// console.log("מספר האיברים המשותפים הייחודיים:", matchCount);
+// console.log("מספר האיברים המשותפים הייחודיים:", matchCount,alreadyMatched);
+
+// let arr1=[1,2,3,2,1,4];
+// let arr2=[3,2,5,6];
+
+// let count=0;
+
+// let math={};
+
+// for(let i=0; i<arr1.length;i++)
+// {
+//     math[arr1[i]]=true;
+// }
+
+// let math2={};
+
+// for(j=0; j<arr2.length;j++)
+// {
+//     let x= arr2[j];
+
+//     if(math[x]===true && math2[x]===undefined )
+//     {
+//         count++;
+//         math2[x]=true;
+
+//     }
+// }
+// console.log(count,math2);
 
 //14
 
-// let originalObj = {
-//     name: "Ruth",
-//     age: 25,
-//     isOnline: true,              
-//     city: "Tel Aviv",
-//     skills: ["JS", "Python"],    
-//     id: 1045
-// };
+let originalObj = {
+    name: "Ruth",
+    age: 25,
+    isOnline: true,              
+    city: "Tel Aviv",
+    skills: ["JS", "Python"],    
+    id: 1045
+};
 
-// let reversedObj = {};
-// let keys = Object.keys(originalObj);
+let reversedObj = {};
+let keys = Object.keys(originalObj);
 
-// for (let i = 0; i < keys.length; i++) {
-//     let key = keys[i];
-//     let value = originalObj[key];
+for (let i = 0; i < keys.length; i++) {
+    let key = keys[i];
+    let value = originalObj[key];
 
     
-//     if (typeof value === "string" || typeof value === "number") {
+    if (typeof value === "string" || typeof value === "number") {
        
-//         reversedObj[value] = key;
-//     }
-// }
+        reversedObj[value] = key;
+    }
+}
 
-// console.log("האובייקט המקורי:", originalObj);
-// console.log("האובייקט ההפוך (עם סינון):", reversedObj);
+console.log("האובייקט המקורי:", originalObj);
+console.log("האובייקט ההפוך (עם סינון):", reversedObj);
 
 //15
 
@@ -468,53 +533,53 @@
 
 //20
 
-let board = [
-    ["O", "X", "O", "X"],
-    ["O", "O", "O", "X"], 
-    ["X", "X", "O", "O"],
-    ["O", "X", "X", "O"]
-];
+// let board = [
+//     ["O", "X", "O", "X"],
+//     ["O", "O", "O", "X"], 
+//     ["X", "X", "O", "O"],
+//     ["O", "X", "X", "O"]
+// ];
 
-let isBoardValid = true;
-let size = board.length;
-
-
-for (let i = 0; i < size; i++) {
-    let rowOCount = 0;
-
-    for (let j = 0; j < board[i].length; j++) {
-        if (board[i][j] === "O") {
-            rowOCount++;
-        }
-    }
-
-    
-    if (rowOCount > 2) {
-        console.log(`[שגיאה] שורה מספר ${i} מכילה ${rowOCount} פעמים "O" (מותר מקסימום 2).`);
-        isBoardValid = false;
-    }
-}
+// let isBoardValid = true;
+// let size = board.length;
 
 
-for (let j = 0; j < size; j++) {
-    let colOCount = 0;
+// for (let i = 0; i < size; i++) {
+//     let rowOCount = 0;
 
-    for (let i = 0; i < size; i++) {
-        if (board[i][j] === "O") {
-            colOCount++;
-        }
-    }
+//     for (let j = 0; j < board[i].length; j++) {
+//         if (board[i][j] === "O") {
+//             rowOCount++;
+//         }
+//     }
 
     
-    if (colOCount > 2) {
-        console.log(`[שגיאה] עמודה מספר ${j} מכילה ${colOCount} פעמים "O" (מותר מקסימום 2).`);
-        isBoardValid = false;
-    }
-}
+//     if (rowOCount > 2) {
+//         console.log(`[שגיאה] שורה מספר ${i} מכילה ${rowOCount} פעמים "O" (מותר מקסימום 2).`);
+//         isBoardValid = false;
+//     }
+// }
 
 
-if (isBoardValid) {
-    console.log("הלוח תקין לחלוטין! עומד בכל הכללים.");
-} else {
-    console.log("הלוח נכשל בבדיקת החוקיות.");
-}
+// for (let j = 0; j < size; j++) {
+//     let colOCount = 0;
+
+//     for (let i = 0; i < size; i++) {
+//         if (board[i][j] === "O") {
+//             colOCount++;
+//         }
+//     }
+
+    
+//     if (colOCount > 2) {
+//         console.log(`[שגיאה] עמודה מספר ${j} מכילה ${colOCount} פעמים "O" (מותר מקסימום 2).`);
+//         isBoardValid = false;
+//     }
+// }
+
+
+// if (isBoardValid) {
+//     console.log("הלוח תקין לחלוטין! עומד בכל הכללים.");
+// } else {
+//     console.log("הלוח נכשל בבדיקת החוקיות.");
+// }
