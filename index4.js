@@ -41,11 +41,16 @@ const data = [
   },
 ];
 
+//exe1
+
 function name1(data1) {
   const names = data1.map((person) => person.name);
   return names;
 }
+
 console.log(name1(data));
+
+//exe2
 
 function year(data2) {
   
@@ -59,7 +64,10 @@ function year(data2) {
 
 console.log(year(data));
 
+//exe3
+
 function countFoods(data3) {
+
     const foodCount = {}; 
 
     data3.forEach(person => {
@@ -81,4 +89,5 @@ function countFoods(data3) {
 
     return foodCount;
 }
+
 console.log(countFoods(data));
